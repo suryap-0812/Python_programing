@@ -1,9 +1,10 @@
-import calendar
-y = int(input("Enter a number: "))
-cal  = int(input("Enter month number: "))
+# 
 
-def print_cal( y,):
-    for i in range(1,13):
-        print(calendar.month(y, i)) 
+help("topics")
+help("modules packages")
+help("print")
 
-print_cal(y)
+import instaloader
+import os   
+ig = instaloader.Instaloader()  
+ig.login("username", "password") # login to your account
