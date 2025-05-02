@@ -11,21 +11,34 @@
 # # ig.download_profile("itz_.sasi._xz", profile_pic_only=True) # download profile picture of the user
 
 
-# import pywhatkit
-
+import pywhatkit
 # pywhatkit.sendwhatmsg_instantly("+917010791279", "Hello, this is a test message!") # send a message to the number at 3:00 PM
 
 
 class supermarket: # creatng a class named supermarket
-    pname = input("Enter the product name: ") # taking input from user for product name
-    qnty = int(input("Enter the quantity: ")) # taking input from user for quantity
-    price = float(input("Enter the price: ")) # taking input from user for price
-
+    def __init__(self):
+       print("Welcome to the supermarket") # printing welcome message
+    def sendmsg(self, mobile, info):
+        print("Sending message to: ", mobile)
+        pywhatkit.sendwhatmsg_instantly(self.st+mobile, info)
+        print("Message: ", info)
+    def select(self):
+        a = input("Select the country:\n1. India\n2. USA\n3. UK\n")
+        if a == "1":
+            print("You have selected India")
+            self.st = "+91"
+        elif a == "2":
+            print("You have selected USA")
+            self.st = "+1"
+        elif a == "3":
+            print("You have selected UK")
+            self.st = "+44"
+        else:
+            print("Invalid selection")
+       
+     
 s = supermarket() # creating an object of the class supermarket
-print("Product name: ", s.pname) # printing the product name
-print("Quantity: ", s.qnty) # printing the quantity 
-print("Price: ", s.price) # printing the price
-print("Total price: ", s.qnty * s.price) # printing the total price by multiplying quantity and price
-
+s.select()
+s.sendmsg("9361526618", "hello bhaii")
 
 
